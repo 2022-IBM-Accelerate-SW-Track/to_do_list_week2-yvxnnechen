@@ -21,11 +21,11 @@ const Todos = ({ todos }) => {
     todos.map((todo) => {
       return (
         <Grid key={todo.id}>
-          <Card style={{marginTop:10}}> 
+          <Card> 
             {/* Remember, we set the local state of this todo item when the user submits the form in 
             AddTodo.js. All we need to do is return the todo list item {todo.content} */}
             <ListItemButton component="a" href="#simple-list">
-              <Checkbox style ={"paddingLeft:0;"} color ="primary"/>
+              <Checkbox style ={{paddingLeft:0}} color ="primary" onClick={() => deleteTodo(todo.id)}/>
               <ListItemText primary={todo.content} secondary={todo.date} />
             </ListItemButton>
           </Card>
